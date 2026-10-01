@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import centers from '../../data/centers.json';
+export function getStaticPaths() {
+  return centers.map(c => ({ params: { slug: c.slug }, props: { c } }));
+}
+const { c } = Astro.props;
+---
+<Layout title={`${c.name} — ${c.city}, ${c.state}`}>
+  <div class="wrap" style="padding-top:20px">
+    <p><a href="/">← All exam centres</a></p>
+    <h1>{c.name}</h1>
+    <p style="color:#64748b">{c.city}, {c.state} — PIN {c.pin}</p>
+    <div class="card">
+      <h2>Centre details</h2>
+      <ul>
+        <li>Type: {c.type}</li>
+        <li>City: {c.city}</li>
+        <li>State: {c.state}</li>
+        <li>PIN: {c.pin}</li>
+      </ul>
+      <p style="color:#64748b;font-size:.85rem">{c.notes}</p>
+    </div>
+    <div class="card">
+      <h2>Getting there</h2>
+      <p>Nearest bus stop, metro and railway options are added as users report them. Check the official admit card for the exact gate and reporting time.</p>
+    </div>
+  </div>
+</Layout>
