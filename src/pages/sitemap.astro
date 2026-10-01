@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import centers from '../data/centers.json';
+const byState = {};
+for (const c of centers) { (byState[c.state] ||= []).push(c); }
+---
+<Layout title="Sitemap — all pages">
+  <div class="wrap" style="padding-top:20px">
+    <h1>Sitemap</h1>
+    <p class="lead">Every page on this site, grouped by state.</p>
+    <div class="card"><p><a href="/">Home</a></p></div>
+    {Object.keys(byState).sort().map(state => (
+      <div class="card">
+        <h2>{state}</h2>
+        <ul>
+          {byState[state].map(c => <li><a href={`/exam-center/${c.slug}/`}>{c.name} — {c.city}</a></li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Layout>
