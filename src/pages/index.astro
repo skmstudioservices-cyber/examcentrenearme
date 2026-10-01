@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import centers from '../data/centers.json';
+const states = [...new Set(centers.map(c => c.state))].sort();
+const cities = [...new Set(centers.map(c => c.city))].sort();
+---
+<Layout title="Exam Centre Near Me — Find Your Exam Centre">
+  <section class="hero"><div class="wrap">
+    <h1>Find exam centres across India</h1>
+    <p>Search by state, city or PIN code. Built for SSC, UPSC, Railway, Banking, NEET and other computer-based tests.</p>
+    <div class="filters">
+      <a class="f" href="#all">All states</a>
+      <a class="f" href="#states">By state</a>
+      <a class="f" href="#cities">By city</a>
+      <a class="f" href="#centers">By centre</a>
+      <a class="f" href="#near">By me</a>
+    </div>
+  </div></section>
+  <div class="wrap">
+    <div class="stats">
+      <span><b>{states.length}</b> states</span>
+      <span><b>{cities.length}</b> cities</span>
+      <span><b>{centers.length}</b> centres</span>
+    </div>
+    <div class="card" id="centers"><h2>Exam centres</h2>
+      <div class="grid">
+        {centers.map(c => (
+          <a class="cell" href={`/exam-center/${c.slug}/`}>{c.name}<span class="cc">{c.city}, {c.state}</span></a>
+        ))}
+      </div>
+    </div>
+    <div class="card" id="states"><h2>Browse by state</h2>
+      <div class="grid">{states.map(s => <a class="cell" href={`#all`}>{s}</a>)}</div>
+    </div>
+    <div class="card" id="cities"><h2>Browse by city</h2>
+      <div class="grid">{cities.map(s => <a class="cell" href={`#all`}>{s}</a>)}</div>
+    </div>
+  </div>
+</Layout>
