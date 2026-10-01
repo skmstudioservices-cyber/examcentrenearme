@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "sample-public-school-arwal",
+    "name": "Sample Public School",
+    "city": "Arwal",
+    "state": "Bihar",
+    "pin": "804401",
+    "type": "Computer-based test centre",
+    "notes": "Sample entry — replace with a real centre."
+  },
+  {
+    "slug": "sample-senior-secondary-jaipur",
+    "name": "Sample Senior Secondary School",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "pin": "302001",
+    "type": "Online exam lab",
+    "notes": "Sample entry — replace with a real centre."
+  },
+  {
+    "slug": "sample-it-park-noida",
+    "name": "Sample IT Park Testing Lab",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "pin": "201301",
+    "type": "iON-style digital zone",
+    "notes": "Sample entry — replace with a real centre."
+  },
+  {
+    "slug": "sample-college-pune",
+    "name": "Sample College Exam Block",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pin": "411001",
+    "type": "Offline + online",
+    "notes": "Sample entry — replace with a real centre."
+  },
+  {
+    "slug": "sample-university-ranchi",
+    "name": "Sample University Centre",
+    "city": "Ranchi",
+    "state": "Jharkhand",
+    "pin": "834001",
+    "type": "Computer-based test centre",
+    "notes": "Sample entry — replace with a real centre."
+  },
+  {
+    "slug": "sample-school-bhopal",
+    "name": "Sample Higher Secondary School",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "pin": "462001",
+    "type": "Online exam lab",
+    "notes": "Sample entry — replace with a real centre."
+  }
+]
